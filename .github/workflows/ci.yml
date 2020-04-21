@@ -26,7 +26,11 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Create the package
       run: dotnet pack -c Release src/GihanSoft.ExtensionMethods --no-restore
-    - name: Publish the package to GPR
-      run: dotnet nuget push src/GihanSoft.ExtensionMethods/bin/Release/*.nupkg --skip-duplicate
-    - name: Publish the package to nuget.org
-      run: dotnet nuget push src/GihanSoft.ExtensionMethods/bin/Release/*.nupkg -k oy2bimpr7ampbsxkwlaqtsilklomemledosh5y3c545ok4 -s https://api.nuget.org/v3/index.json --skip-duplicate
+    - name: Publish the package to GPR 1
+      run: dotnet nuget push src/GihanSoft.Security.Cryptography.Abstractions/bin/Release/*.nupkg --skip-duplicate
+    - name: Publish the package to GPR 2
+      run: dotnet nuget push src/GihanSoft.Security.Cryptography.Aes/bin/Release/*.nupkg --skip-duplicate
+    - name: Publish the package to nuget.org 1
+      run: dotnet nuget push src/GihanSoft.Security.Cryptography.Abstractions/bin/Release/*.nupkg -k oy2bimpr7ampbsxkwlaqtsilklomemledosh5y3c545ok4 -s https://api.nuget.org/v3/index.json --skip-duplicate
+    - name: Publish the package to nuget.org 2
+      run: dotnet nuget push src/GihanSoft.Security.Cryptography.Aes/bin/Release/*.nupkg -k oy2bimpr7ampbsxkwlaqtsilklomemledosh5y3c545ok4 -s https://api.nuget.org/v3/index.json --skip-duplicate
