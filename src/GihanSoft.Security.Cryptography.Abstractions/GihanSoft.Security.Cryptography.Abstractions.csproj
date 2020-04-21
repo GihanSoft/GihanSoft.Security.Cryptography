@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -14,6 +14,7 @@
     <Description>GihanSoft Cryptography AES</Description>
     <PackageIcon>GihanSoft.png</PackageIcon>
     <ApplicationIcon>GihanSoft.ico</ApplicationIcon>
+    <RootNamespace>GihanSoft.Security.Cryptography</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,6 +26,10 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GihanSoft.ExtensionMethods" Version="0.1.0" />
   </ItemGroup>
 
 </Project>

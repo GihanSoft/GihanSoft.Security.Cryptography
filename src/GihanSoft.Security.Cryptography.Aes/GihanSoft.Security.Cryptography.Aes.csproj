@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -14,6 +14,7 @@
     <Description>GihanSoft Cryptography AES</Description>
     <PackageIcon>GihanSoft.png</PackageIcon>
     <ApplicationIcon>GihanSoft.ico</ApplicationIcon>
+    <RootNamespace>GihanSoft.Security.Cryptography</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,6 +26,15 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Cryptography.KeyDerivation" Version="3.1.3" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GihanSoft.Security.Cryptography.Abstractions\GihanSoft.Security.Cryptography.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>
