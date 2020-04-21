@@ -24,8 +24,10 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore
-    - name: Create the package
-      run: dotnet pack -c Release src/GihanSoft.ExtensionMethods --no-restore
+    - name: Create the package 1
+      run: dotnet pack -c Release src/GihanSoft.Security.Cryptography.Abstractions --no-restore
+    - name: Create the package 2
+      run: dotnet pack -c Release src/GihanSoft.Security.Cryptography.Aes --no-restore
     - name: Publish the package to GPR 1
       run: dotnet nuget push src/GihanSoft.Security.Cryptography.Abstractions/bin/Release/*.nupkg --skip-duplicate
     - name: Publish the package to GPR 2
