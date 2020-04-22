@@ -15,6 +15,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GihanSoft.Security.Cryptogr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GihanSoft.Security.Cryptography.Aes", "src\GihanSoft.Security.Cryptography.Aes\GihanSoft.Security.Cryptography.Aes.csproj", "{968C7D26-076E-45C4-A08C-FD60C5EDCF85}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GihanSoft.Security.Cryptography.Aes.Test", "test\GihanSoft.Security.Cryptography.Aes.Test\GihanSoft.Security.Cryptography.Aes.Test.csproj", "{7A683B12-8C6F-45B0-82FD-5D4F3D090B71}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{6B43C8F0-DEE0-471F-BBC2-2B56C9FA0929}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,9 +33,16 @@ Global
 		{968C7D26-076E-45C4-A08C-FD60C5EDCF85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{968C7D26-076E-45C4-A08C-FD60C5EDCF85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{968C7D26-076E-45C4-A08C-FD60C5EDCF85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A683B12-8C6F-45B0-82FD-5D4F3D090B71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A683B12-8C6F-45B0-82FD-5D4F3D090B71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A683B12-8C6F-45B0-82FD-5D4F3D090B71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A683B12-8C6F-45B0-82FD-5D4F3D090B71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7A683B12-8C6F-45B0-82FD-5D4F3D090B71} = {6B43C8F0-DEE0-471F-BBC2-2B56C9FA0929}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9E961D22-0C4F-4405-BF5D-B1C14BF641AF}

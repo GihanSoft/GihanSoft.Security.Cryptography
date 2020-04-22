@@ -10,7 +10,7 @@
     <RepositoryUrl>https://github.com/GihanSoft/GihanSoft.Security.Cryptography</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>0.1.0.0</Version>
+    <Version>0.1.0.1</Version>
     <Description>GihanSoft Cryptography AES</Description>
     <PackageIcon>GihanSoft.png</PackageIcon>
     <ApplicationIcon>GihanSoft.ico</ApplicationIcon>

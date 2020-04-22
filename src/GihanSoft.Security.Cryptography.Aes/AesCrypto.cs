@@ -32,12 +32,13 @@ namespace GihanSoft.Security.Cryptography
 
         public byte[] Decrypt(byte[] cipher, bool useSalt = true)
         {
-            using (var memoryStream = new MemoryStream())
+            using (var memoryStream = new MemoryStream(cipher))
             using (var cryptoStream = new CryptoStream(memoryStream, aes.CreateDecryptor(), CryptoStreamMode.Read))
+            using (var outStream = new MemoryStream())
             {
-                cryptoStream.Write(cipher, 0, cipher.Length);
-                cryptoStream.Close();
-                return memoryStream.ToArray();
+                cryptoStream.CopyTo(outStream);
+                outStream.Position = 0;
+                return outStream.ToArray();
             }
         }
         public byte[] Encrypt(byte[] plain, bool useSalt = true)
