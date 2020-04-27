@@ -1,4 +1,4 @@
-name: CI
+name: publish Abstractions
 
 on:
   push:
@@ -13,17 +13,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET Core
+    
+    - name: Setup dotnet
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.101
-        source-url: https://api.nuget.org/v3/index.json
-      env:
-        NUGET_AUTH_TOKEN: ${{secrets.NUGET_TOKEN}}
-    - name: Install dependencies
-      run: dotnet restore
-    - name: Create the package
-      run: dotnet pack -c Release src/GihanSoft.Security.Cryptography.Abstractions --no-restore
-    - name: Publish the package to nuget.org 1
-      run: dotnet nuget push src/GihanSoft.Security.Cryptography.Abstractions/bin/Release/*.nupkg --skip-duplicate
-    
+        dotnet-version: 3.1.100
+
+    - name: publish on version change
+      uses: rohith/publish-nuget@v2
+      with:
+        PROJECT_FILE_PATH: src/GihanSoft.Security.Cryptography.Abstractions
+        NUGET_KEY: ${{ secrets.NUGET_KEY }}
