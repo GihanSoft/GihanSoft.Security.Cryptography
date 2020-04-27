@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Cryptography.KeyDerivation;
-using System;
+﻿using System;
 using System.IO;
 using System.Security.Cryptography;
 
@@ -8,18 +7,19 @@ namespace GihanSoft.Security.Cryptography
     public class AesCrypto : ICrypto, IDisposable
     {
         protected readonly Aes aes;
+        protected readonly int SaltSize;
 
         public AesCrypto(AesCryptoOptions options)
         {
+            SaltSize = options.SaltSize;
             var key = new byte[options.KeySize / 8];
             var iv = new byte[options.BlockSize / 8];
 
-            var keys = KeyDerivation.Pbkdf2(
-                options.Password,
-                new byte[128 / 8],
-                KeyDerivationPrf.HMACSHA512,
-                7531,
-                (options.KeySize + options.BlockSize) / 8);
+            var hash = SHA512.Create();
+
+            var keys = options.Password.Hash(hash);
+            for (int i = 0; i < options.Password.Length; i++)
+                keys = keys.Hash(hash);
 
             Array.Copy(keys, 0, key, 0, options.KeySize / 8);
             Array.Copy(keys, options.KeySize / 8, iv, 0, options.BlockSize / 8);
@@ -32,21 +32,36 @@ namespace GihanSoft.Security.Cryptography
 
         public byte[] Decrypt(byte[] cipher, bool useSalt = true)
         {
+            if (cipher.IsNull())
+                return cipher;
             using (var memoryStream = new MemoryStream(cipher))
             using (var cryptoStream = new CryptoStream(memoryStream, aes.CreateDecryptor(), CryptoStreamMode.Read))
             using (var outStream = new MemoryStream())
             {
                 cryptoStream.CopyTo(outStream);
+
+                var plain = new byte[outStream.Length - (useSalt ? SaltSize / 8 : 0)];
+
                 outStream.Position = 0;
-                return outStream.ToArray();
+                outStream.Read(plain, 0, plain.Length);
+                return plain;
             }
         }
         public byte[] Encrypt(byte[] plain, bool useSalt = true)
         {
+            if (plain.IsNull())
+                return plain;
             using (var memoryStream = new MemoryStream())
             using (var cryptoStream = new CryptoStream(memoryStream, aes.CreateEncryptor(), CryptoStreamMode.Write))
             {
                 cryptoStream.Write(plain, 0, plain.Length);
+                if (useSalt)
+                {
+                    var salt = new byte[SaltSize / 8];
+                    var rng = RandomNumberGenerator.Create();
+                    rng.GetBytes(salt);
+                    cryptoStream.Write(salt, 0, salt.Length);
+                }
                 cryptoStream.Close();
                 return memoryStream.ToArray();
             }

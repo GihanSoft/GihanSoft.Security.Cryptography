@@ -22,5 +22,5 @@ jobs:
     - name: publish on version change
       uses: rohith/publish-nuget@v2
       with:
-        PROJECT_FILE_PATH: src/GihanSoft.Security.Cryptography.Abstractions
+        PROJECT_FILE_PATH: src/GihanSoft.Security.Cryptography.Abstractions/GihanSoft.Security.Cryptography.Abstractions.csproj
         NUGET_KEY: ${{ secrets.NUGET_KEY }}
