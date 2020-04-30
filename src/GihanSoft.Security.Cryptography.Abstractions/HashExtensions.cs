@@ -9,7 +9,7 @@
 
         public static byte[] Hash(this string src, IHash hash)
         {
-            return hash.Hash(src.Decode());
+            return hash.Hash(src);
         }
     }
 }

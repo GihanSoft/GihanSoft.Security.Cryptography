@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GihanSoft.Security.Cryptography.Aes\GihanSoft.Security.Cryptography.Aes.csproj" />
+    <ProjectReference Include="..\GihanSoft.Security.Cryptography.Pbkdf2\GihanSoft.Security.Cryptography.Pbkdf2.csproj" />
+    <ProjectReference Include="..\GihanSoft.Security.Cryptography.StdHash\GihanSoft.Security.Cryptography.StdHash.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -19,6 +19,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GihanSoft.Security.Cryptogr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{6B43C8F0-DEE0-471F-BBC2-2B56C9FA0929}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GihanSoft.Security.Cryptography.StdHash", "src\GihanSoft.Security.Cryptography.StdHash\GihanSoft.Security.Cryptography.StdHash.csproj", "{ED183B02-30E5-414C-9C4D-51B75D37B4F5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GihanSoft.Security.Cryptography.Pbkdf2", "src\GihanSoft.Security.Cryptography.Pbkdf2\GihanSoft.Security.Cryptography.Pbkdf2.csproj", "{0D201E42-4C9F-407D-8F0C-57245B281872}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GihanSoft.Security.Cryptography", "src\GihanSoft.Security.Cryptography\GihanSoft.Security.Cryptography.csproj", "{6987CD60-971A-47D4-B82E-FEA62DF22196}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +43,18 @@ Global
 		{7A683B12-8C6F-45B0-82FD-5D4F3D090B71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A683B12-8C6F-45B0-82FD-5D4F3D090B71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A683B12-8C6F-45B0-82FD-5D4F3D090B71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED183B02-30E5-414C-9C4D-51B75D37B4F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED183B02-30E5-414C-9C4D-51B75D37B4F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED183B02-30E5-414C-9C4D-51B75D37B4F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED183B02-30E5-414C-9C4D-51B75D37B4F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D201E42-4C9F-407D-8F0C-57245B281872}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D201E42-4C9F-407D-8F0C-57245B281872}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D201E42-4C9F-407D-8F0C-57245B281872}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D201E42-4C9F-407D-8F0C-57245B281872}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6987CD60-971A-47D4-B82E-FEA62DF22196}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6987CD60-971A-47D4-B82E-FEA62DF22196}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6987CD60-971A-47D4-B82E-FEA62DF22196}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6987CD60-971A-47D4-B82E-FEA62DF22196}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

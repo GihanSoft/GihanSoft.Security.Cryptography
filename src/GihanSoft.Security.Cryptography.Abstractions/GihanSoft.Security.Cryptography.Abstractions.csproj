@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>GihanSoft.Security.Cryptography</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
     <Authors>Muhammad Babayi</Authors>
     <Company>GihanSoft</Company>
     <PackageProjectUrl>https://gihansoft.ir</PackageProjectUrl>
@@ -10,11 +13,10 @@
     <RepositoryUrl>https://github.com/GihanSoft/GihanSoft.Security.Cryptography</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>0.1.1.0</Version>
-    <Description>GihanSoft Cryptography AES</Description>
+    <Version>0.1.2.0</Version>
+    <Description>GihanSoft Cryptography Abstractions</Description>
     <PackageIcon>GihanSoft.png</PackageIcon>
     <ApplicationIcon>GihanSoft.ico</ApplicationIcon>
-    <RootNamespace>GihanSoft.Security.Cryptography</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
