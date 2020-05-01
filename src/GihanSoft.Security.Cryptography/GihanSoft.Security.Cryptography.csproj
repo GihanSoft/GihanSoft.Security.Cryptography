@@ -1,13 +1,38 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Authors>Muhammad Babayi</Authors>
+    <Company>GihanSoft</Company>
+    <PackageProjectUrl>https://gihansoft.ir</PackageProjectUrl>
+    <Copyright>Copyright (c) 2020 GihanSoft</Copyright>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <RepositoryUrl>https://github.com/GihanSoft/GihanSoft.Security.Cryptography</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Version>0.1.2.0</Version>
+    <Description>GihanSoft Cryptography Package</Description>
+    <PackageIcon>GihanSoft.png</PackageIcon>
+    <ApplicationIcon>GihanSoft.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\GihanSoft.Security.Cryptography.Aes\GihanSoft.Security.Cryptography.Aes.csproj" />
     <ProjectReference Include="..\GihanSoft.Security.Cryptography.Pbkdf2\GihanSoft.Security.Cryptography.Pbkdf2.csproj" />
     <ProjectReference Include="..\GihanSoft.Security.Cryptography.StdHash\GihanSoft.Security.Cryptography.StdHash.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\GihanSoft.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
