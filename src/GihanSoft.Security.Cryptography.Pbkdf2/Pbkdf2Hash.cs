@@ -4,11 +4,11 @@ using System.Diagnostics.CodeAnalysis;
 namespace GihanSoft.Security.Cryptography
 {
     [SuppressMessage("Design", "CA1063:Implement IDisposable Correctly", Justification = "<Pending>")]
-    public class Pbkdf2 : IHash
+    public class Pbkdf2Hash : IHash
     {
-        private readonly Pbkdf2Options options;
+        private readonly Pbkdf2HashOptions options;
 
-        public Pbkdf2(Pbkdf2Options options)
+        public Pbkdf2Hash(Pbkdf2HashOptions options)
         {
             this.options = options;
         }
@@ -22,10 +22,10 @@ namespace GihanSoft.Security.Cryptography
         {
             return KeyDerivation.Pbkdf2(
                 buffer,
-                options.GetSalt(),
+                options.Salt,
                 options.KeyDerivationPrf,
                 options.IterationCount,
-                options.NumBytesRequested);
+                options.NumBitsRequested / 8);
         }
 
         void System.IDisposable.Dispose() { }

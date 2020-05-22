@@ -11,6 +11,11 @@ namespace GihanSoft.Security.Cryptography
         {
             this.hashAlgorithm = hashAlgorithm;
         }
+        public StdHash(StdHashOptions options)
+        {
+            hashAlgorithm = HashAlgorithm.Create(options.HashAlgorithmName);
+        }
+
         public byte[] Hash(byte[] buffer)
         {
             return hashAlgorithm.ComputeHash(buffer);
