@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Security.Cryptography;
+using System.Text;
+
+using GihanSoft.Security.Cryptography.Utilities;
 
 namespace GihanSoft.Security.Cryptography
 {
@@ -23,7 +26,7 @@ namespace GihanSoft.Security.Cryptography
 
         public byte[] Hash(string buffer)
         {
-            return Hash(buffer.Decode());
+            return Hash(buffer.Encode<UTF8Encoding>());
         }
 
         #region IDisposable Support

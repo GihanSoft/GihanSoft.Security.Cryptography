@@ -13,7 +13,7 @@
     <RepositoryUrl>https://github.com/GihanSoft/GihanSoft.Security.Cryptography</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>0.1.3.0</Version>
+    <Version>0.1.4.0-beta</Version>
     <Description>GihanSoft Cryptography PBKDF2 Hash</Description>
     <PackageIcon>GihanSoft.png</PackageIcon>
     <ApplicationIcon>GihanSoft.ico</ApplicationIcon>

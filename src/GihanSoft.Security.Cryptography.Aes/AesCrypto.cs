@@ -1,6 +1,9 @@
 ﻿using System;
 using System.IO;
 using System.Security.Cryptography;
+using System.Text;
+
+using GihanSoft.Security.Cryptography.Utilities;
 
 namespace GihanSoft.Security.Cryptography
 {
@@ -17,9 +20,9 @@ namespace GihanSoft.Security.Cryptography
 
             var hash = SHA512.Create();
 
-            var keys = options.Password.Hash(hash);
+            var keys = hash.ComputeHash(options.Password.Encode<UTF8Encoding>());
             for (int i = 0; i < options.Password.Length; i++)
-                keys = keys.Hash(hash);
+                keys = hash.ComputeHash(keys);
 
             Array.Copy(keys, 0, key, 0, options.KeySize / 8);
             Array.Copy(keys, options.KeySize / 8, iv, 0, options.BlockSize / 8);
@@ -32,7 +35,7 @@ namespace GihanSoft.Security.Cryptography
 
         public byte[] Decrypt(byte[] cipher, bool useSalt = true)
         {
-            if (cipher.IsNull())
+            if (cipher is null)
                 return cipher;
             using (var memoryStream = new MemoryStream(cipher))
             using (var cryptoStream = new CryptoStream(memoryStream, aes.CreateDecryptor(), CryptoStreamMode.Read))
@@ -49,7 +52,7 @@ namespace GihanSoft.Security.Cryptography
         }
         public byte[] Encrypt(byte[] plain, bool useSalt = true)
         {
-            if (plain.IsNull())
+            if (plain is null)
                 return plain;
             using (var memoryStream = new MemoryStream())
             using (var cryptoStream = new CryptoStream(memoryStream, aes.CreateEncryptor(), CryptoStreamMode.Write))

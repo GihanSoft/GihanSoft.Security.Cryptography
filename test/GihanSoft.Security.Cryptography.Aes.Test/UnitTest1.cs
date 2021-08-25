@@ -1,4 +1,8 @@
-﻿using Xunit;
+﻿using System.Text;
+
+using Xunit;
+
+using GihanSoft.Security.Cryptography.Utilities;
 
 namespace GihanSoft.Security.Cryptography.Aes.Test
 {
@@ -9,10 +13,10 @@ namespace GihanSoft.Security.Cryptography.Aes.Test
         {
             var p = "سلام";
             var c = new AesCrypto(new AesCryptoOptions { Password = "aslkd123!@#" });
-            var p1 = p.Decode().Encrypt(c).Decrypt(c).Encode();
-            var p2 = p.Decode().Encrypt(c).Decrypt(c).Encode();
-            var p3 = p.Decode().Encrypt(c).Decrypt(c).Encode();
-            var p4 = p.Decode().Encrypt(c).Decrypt(c).Encode();
+            var p1 = p.Encode<UTF8Encoding>().Encrypt(c).Decrypt(c).Decode<UTF8Encoding>();
+            var p2 = p.Encode<UTF8Encoding>().Encrypt(c).Decrypt(c).Decode<UTF8Encoding>();
+            var p3 = p.Encode<UTF8Encoding>().Encrypt(c).Decrypt(c).Decode<UTF8Encoding>();
+            var p4 = p.Encode<UTF8Encoding>().Encrypt(c).Decrypt(c).Decode<UTF8Encoding>();
             Assert.Equal(p, p1);
             Assert.Equal(p, p2);
             Assert.Equal(p, p3);

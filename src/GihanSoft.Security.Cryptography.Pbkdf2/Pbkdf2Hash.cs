@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Cryptography.KeyDerivation;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Text;
+
+using GihanSoft.Security.Cryptography.Utilities;
+
+using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 
 namespace GihanSoft.Security.Cryptography
 {
-    [SuppressMessage("Design", "CA1063:Implement IDisposable Correctly", Justification = "<Pending>")]
     public class Pbkdf2Hash : IHash
     {
         private readonly Pbkdf2HashOptions options;
@@ -15,7 +18,7 @@ namespace GihanSoft.Security.Cryptography
 
         public byte[] Hash(byte[] buffer)
         {
-            return Hash(buffer.Encode());
+            return Hash(buffer.Decode<UTF8Encoding>());
         }
 
         public byte[] Hash(string buffer)
