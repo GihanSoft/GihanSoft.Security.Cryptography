@@ -13,7 +13,7 @@
     <RepositoryUrl>https://github.com/GihanSoft/GihanSoft.Security.Cryptography</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>0.1.4.0-beta</Version>
+    <Version>0.1.4.1-beta</Version>
     <Description>GihanSoft Cryptography Standard Hash</Description>
     <PackageIcon>GihanSoft.png</PackageIcon>
     <ApplicationIcon>GihanSoft.ico</ApplicationIcon>
